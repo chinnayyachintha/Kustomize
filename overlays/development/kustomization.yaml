@@ -5,7 +5,7 @@ namePrefix: dev-
 nameSuffix: -env
 
 resources:
-- ./namespace.yaml
+- namespace.yaml
 - ../../base
 
 

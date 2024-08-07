@@ -18,7 +18,3 @@ spec:
       containers:
       - image: sreeharshav/rollingupdate:v100
         name: appcontainer
-        
-
-
-

@@ -12,7 +12,7 @@ labels:
   - pairs:
       role: monitoring
       owner: java-appteam
-      environment: production
+      environment: default-production
       batch: k8sb21
     includeSelectors: false
 

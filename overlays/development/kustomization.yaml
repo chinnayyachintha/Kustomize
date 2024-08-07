@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: megastar
+namePrefix: dev-
+nameSuffix: -env
+
+resources:
+- ../../base
+
+
+patches:
+ - target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: dev-nginx001-env
+   path: patch-limits.yaml
+
+replicas:
+- count: 2
+  name: nginx001
+
+images:
+- newName: sreeharshav/testcontainer
+  newTag: v1
+  name: sreeharshav/rollingupdate

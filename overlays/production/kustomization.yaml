@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: superstar
+resources:
+- ../../base
+
+patches:
+ - target:
+      version: apps/v1
+      kind: Deployment
+      name: nginx001
+   path: patch-limits.yaml
+
+replicas:
+- name: nginx001
+  count: 4
+
+images:
+- name: hello123
+  newName: sreeharshav/rollingupdate
+  newTag: v1
+
+
+#kustomize edit set image sreeharshav/testcontainer:v1
+#kustomize edit set replicas nginx001=20
+#https://levelup.gitconnected.com/kubernetes-change-base-yaml-config-for-different-environments-prod-test-6224bfb6cdd6
+#https://devpress.csdn.net/cicd/62ec22ba89d9027116a103e6.html
+

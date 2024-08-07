@@ -1,0 +1,4 @@
+- op: add #action
+  path: "/spec/template/spec/nodeSelector" #resouirce we want to change
+  value:             #value we want to use for patching
+    kubernetes.io/hostname: i-0d4e4096ee76b90fd

@@ -18,7 +18,7 @@ patches:
    path: patch-limits.yaml
 
 replicas:
-- count: 2
+- count: 5
   name: nginx001
 
 images:
